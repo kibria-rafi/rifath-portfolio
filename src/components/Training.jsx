@@ -32,14 +32,14 @@ function Training() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.62, ease: 'easeOut' }}
-      className="mb-8 rounded-xl border border-newsroom-border bg-white p-6 shadow-newsroom dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-none sm:mb-10 lg:p-8"
+      className="news-shell mb-8 p-6 sm:mb-10 lg:p-8"
     >
-      <div className="mb-6 flex items-end justify-between gap-4 border-b border-newsroom-border pb-4 dark:border-zinc-800">
+      <div className="news-divider mb-6 flex items-end justify-between gap-4 pb-4">
         <div>
-          <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-newsroom-accent dark:text-red-400">
+          <p className="news-kicker">
             Training & Workshops
           </p>
-          <h3 className="mt-2 font-heading text-3xl leading-tight text-newsroom-ink dark:text-zinc-100 sm:text-4xl">
+          <h3 className="news-title">
             Professional Development
           </h3>
         </div>
@@ -52,7 +52,7 @@ function Training() {
         {trainingWorkshops.map((item) => (
           <article
             key={item.title}
-            className="rounded-lg border border-newsroom-border bg-newsroom-paper p-5 dark:border-zinc-700 dark:bg-zinc-950"
+            className="news-card"
           >
             <p className="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-newsroom-accent dark:text-red-400">
               Completed Training

@@ -81,14 +81,14 @@ function Experience() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.62, ease: 'easeOut' }}
-      className="scroll-mt-24 mb-8 rounded-xl border border-newsroom-border bg-white p-6 shadow-newsroom dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-none sm:mb-10 lg:p-8"
+      className="news-shell scroll-mt-24 mb-8 p-6 sm:mb-10 lg:p-8"
     >
-      <div className="mb-6 flex items-end justify-between gap-4 border-b border-newsroom-border pb-4 dark:border-zinc-800">
+      <div className="news-divider mb-6 flex items-end justify-between gap-4 pb-4">
         <div>
-          <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-newsroom-accent dark:text-red-400">
+          <p className="news-kicker">
             Work Experience
           </p>
-          <h3 className="mt-2 font-heading text-3xl leading-tight text-newsroom-ink dark:text-zinc-100 sm:text-4xl">
+          <h3 className="news-title">
             Professional Timeline
           </h3>
         </div>
@@ -117,7 +117,7 @@ function Experience() {
                   viewport={{ once: true, amount: 0.25 }}
                   transition={{ delay: index * 0.08, duration: 0.55, ease: 'easeOut' }}
                   whileHover={{ y: -4 }}
-                  className={`ml-10 rounded-xl border border-newsroom-border bg-newsroom-paper p-4 shadow-newsroom transition-shadow hover:shadow-lg dark:border-zinc-700 dark:bg-zinc-950 dark:shadow-none sm:p-5 md:ml-0 ${alignRight ? 'md:col-start-2' : 'md:col-start-1'}`}
+                  className={`news-card ml-10 p-4 sm:p-5 md:ml-0 ${alignRight ? 'md:col-start-2' : 'md:col-start-1'}`}
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-newsroom-border bg-white p-2 shadow-sm dark:border-zinc-700 dark:bg-zinc-900">
@@ -167,15 +167,15 @@ function Experience() {
         </ol>
       </div>
 
-      <div className="mt-8 border-t border-newsroom-border pt-6 dark:border-zinc-800">
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-newsroom-accent dark:text-red-400">
+      <div className="news-divider mt-8 pt-6">
+        <p className="news-kicker">
           Achievements & Leadership
         </p>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           {leadershipRoles.map((item) => (
             <article
               key={`${item.organization}-${item.unit}`}
-              className="rounded-lg border border-newsroom-border bg-newsroom-paper p-5 dark:border-zinc-700 dark:bg-zinc-950"
+              className="news-card"
             >
               <h4 className="font-heading text-2xl text-newsroom-ink dark:text-zinc-100">
                 {item.title}

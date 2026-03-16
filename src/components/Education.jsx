@@ -43,14 +43,14 @@ function Education() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.62, ease: 'easeOut' }}
-      className="mb-8 rounded-xl border border-newsroom-border bg-white p-6 shadow-newsroom dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-none sm:mb-10 lg:p-8"
+      className="news-shell mb-8 p-6 sm:mb-10 lg:p-8"
     >
-      <div className="mb-6 flex items-end justify-between gap-4 border-b border-newsroom-border pb-4 dark:border-zinc-800">
+      <div className="news-divider mb-6 flex items-end justify-between gap-4 pb-4">
         <div>
-          <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-newsroom-accent dark:text-red-400">
+          <p className="news-kicker">
             Education
           </p>
-          <h3 className="mt-2 font-heading text-3xl leading-tight text-newsroom-ink dark:text-zinc-100 sm:text-4xl">
+          <h3 className="news-title">
             Academic Timeline
           </h3>
         </div>
@@ -71,7 +71,7 @@ function Education() {
               viewport={{ once: true, amount: 0.25 }}
               transition={{ delay: index * 0.08, duration: 0.55, ease: 'easeOut' }}
               whileHover={{ y: -3 }}
-              className="rounded-xl border border-newsroom-border bg-newsroom-paper p-4 shadow-newsroom transition-shadow hover:shadow-lg dark:border-zinc-700 dark:bg-zinc-950 dark:shadow-none sm:p-5"
+              className="news-card p-4 sm:p-5"
             >
               <p className="font-body text-xs font-semibold uppercase tracking-[0.12em] text-newsroom-muted dark:text-zinc-400">
                 Education {index + 1}

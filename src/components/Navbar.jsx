@@ -14,11 +14,12 @@ function Navbar({ isDark, onToggleDark }) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 border-b border-newsroom-border bg-white/95 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/95">
+    <header className="sticky top-0 z-50 border-b border-newsroom-border bg-white/90 backdrop-blur-xl dark:border-zinc-800 dark:bg-zinc-950/90">
+      <div className="h-[3px] bg-gradient-to-r from-red-700 via-red-500 to-red-700" />
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <a
           href="#home"
-          className="font-heading text-xl font-bold tracking-tight text-newsroom-ink dark:text-zinc-100"
+          className="font-heading text-lg font-black tracking-tight text-newsroom-ink dark:text-zinc-100 sm:text-xl"
         >
           Abu Rifath Jahan
         </a>
@@ -28,7 +29,7 @@ function Navbar({ isDark, onToggleDark }) {
             <a
               key={item.label}
               href={item.href}
-              className="font-body text-xs font-semibold uppercase tracking-[0.11em] text-newsroom-muted transition hover:text-newsroom-accent dark:text-zinc-300 dark:hover:text-red-400"
+              className="rounded-full px-3 py-1.5 font-body text-[11px] font-semibold uppercase tracking-[0.11em] text-newsroom-muted transition hover:bg-red-500/10 hover:text-newsroom-accent dark:text-zinc-300 dark:hover:bg-red-500/15 dark:hover:text-red-400"
             >
               {item.label}
             </a>
@@ -57,7 +58,7 @@ function Navbar({ isDark, onToggleDark }) {
       </div>
 
       {isOpen ? (
-        <nav className="grid gap-1 border-t border-newsroom-border bg-white px-4 py-3 md:hidden dark:border-zinc-800 dark:bg-zinc-900">
+        <nav className="grid gap-1 border-t border-newsroom-border bg-white/95 px-4 py-3 shadow-editorial md:hidden dark:border-zinc-800 dark:bg-zinc-900/95 dark:shadow-none">
           {menuItems.map((item) => (
             <a
               key={item.label}

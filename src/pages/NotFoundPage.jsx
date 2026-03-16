@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 
 function NotFoundPage() {
   return (
-    <main className="grid min-h-screen place-items-center bg-newsroom-paper px-4">
-      <div className="text-center">
+    <main className="grid min-h-screen place-items-center bg-newsroom px-4">
+      <div className="news-shell w-full max-w-xl p-8 text-center">
         <p className="font-body text-sm font-semibold uppercase tracking-[0.15em] text-newsroom-accent">
           404
         </p>

@@ -17,13 +17,13 @@ function About() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.62, ease: 'easeOut' }}
-      className="scroll-mt-24 mb-8 grid gap-5 rounded-xl border border-newsroom-border bg-white p-6 shadow-newsroom dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-none sm:mb-10 lg:grid-cols-[1.6fr_1fr] lg:gap-8 lg:p-8"
+      className="news-shell scroll-mt-24 mb-8 grid gap-5 p-6 sm:mb-10 lg:grid-cols-[1.6fr_1fr] lg:gap-8 lg:p-8"
     >
       <article>
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-newsroom-accent dark:text-red-400">
+        <p className="news-kicker">
           About Me
         </p>
-        <h3 className="mt-2 font-heading text-3xl leading-tight text-newsroom-ink dark:text-zinc-100 sm:text-4xl">
+        <h3 className="news-title">
           Reporting stories with clarity, context, and public value.
         </h3>
         <p className="mt-4 font-body text-base leading-relaxed text-newsroom-muted dark:text-zinc-300 sm:text-lg">
@@ -44,7 +44,7 @@ function About() {
         </p>
       </article>
 
-      <aside className="rounded-lg border border-newsroom-border/80 bg-newsroom-paper p-5 dark:border-zinc-700 dark:bg-zinc-950">
+      <aside className="news-card rounded-xl border-newsroom-border/80 p-5">
         <h4 className="font-body text-sm font-semibold uppercase tracking-[0.14em] text-newsroom-ink dark:text-zinc-100">
           Profile Snapshot
         </h4>

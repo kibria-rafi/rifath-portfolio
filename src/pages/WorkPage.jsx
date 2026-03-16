@@ -27,19 +27,19 @@ const MotionArticle = Motion.article
 
 function WorkPage() {
   return (
-    <main className="min-h-screen bg-newsroom-paper px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <main className="min-h-screen bg-newsroom px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
       <div className="mx-auto max-w-5xl">
         <MotionDiv
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: 'easeOut' }}
-          className="mb-8 flex flex-wrap items-center justify-between gap-4 border-b border-newsroom-border pb-5"
+          className="news-shell mb-8 flex flex-wrap items-center justify-between gap-4 p-5 sm:p-6"
         >
           <div>
-            <p className="font-body text-xs uppercase tracking-[0.2em] text-newsroom-muted">
+            <p className="news-kicker">
               Portfolio
             </p>
-            <h1 className="font-heading text-3xl text-newsroom-ink sm:text-4xl">
+            <h1 className="news-title">
               Selected Reporting Work
             </h1>
           </div>
@@ -58,7 +58,7 @@ function WorkPage() {
               initial={{ opacity: 0, x: -14 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.12 * idx, duration: 0.5 }}
-              className="rounded-xl border border-newsroom-border bg-white p-6 shadow-newsroom"
+              className="news-card p-6"
             >
               <p className="font-body text-xs font-semibold uppercase tracking-[0.16em] text-newsroom-accent">
                 {story.tag}

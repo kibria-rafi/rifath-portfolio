@@ -24,13 +24,13 @@ function Contact() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.62, ease: 'easeOut' }}
-      className="scroll-mt-24 mb-10 grid gap-6 rounded-xl border border-newsroom-border bg-white p-6 shadow-newsroom dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-none lg:grid-cols-[1fr_1.2fr] lg:p-8"
+      className="news-shell scroll-mt-24 mb-10 grid gap-6 p-6 lg:grid-cols-[1fr_1.2fr] lg:p-8"
     >
       <article>
-        <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-newsroom-accent dark:text-red-400">
+        <p className="news-kicker">
           Contact
         </p>
-        <h3 className="mt-2 font-heading text-3xl leading-tight text-newsroom-ink dark:text-zinc-100 sm:text-4xl">
+        <h3 className="news-title">
           Let's Connect
         </h3>
         <p className="mt-3 font-body text-base text-newsroom-muted dark:text-zinc-300">
@@ -56,7 +56,7 @@ function Contact() {
 
       <form
         onSubmit={handleSubmit}
-        className="rounded-lg border border-newsroom-border bg-newsroom-paper p-5 dark:border-zinc-700 dark:bg-zinc-950"
+        className="news-card p-5"
       >
         <div className="grid gap-4">
           <label className="grid gap-2">

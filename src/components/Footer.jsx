@@ -2,7 +2,7 @@ import { createElement } from 'react'
 
 function Footer({ socialLinks }) {
   return (
-    <footer className="border-t border-newsroom-border bg-white/95 py-6 dark:border-zinc-800 dark:bg-zinc-950/95">
+    <footer className="border-t border-newsroom-border bg-white/85 py-6 backdrop-blur-xl dark:border-zinc-800 dark:bg-zinc-950/85">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 sm:px-6 lg:px-8">
         <p className="font-body text-sm font-semibold text-newsroom-muted dark:text-zinc-300">
           Copyright © Abu Rifath Jahan

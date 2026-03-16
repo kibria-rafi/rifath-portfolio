@@ -39,10 +39,11 @@ function HomePage() {
 
   return (
     <div className={isDark ? 'dark' : ''}>
-      <div className="min-h-screen bg-newsroom-paper bg-newsroom text-newsroom-ink transition-colors duration-300 dark:bg-zinc-950 dark:bg-none dark:text-zinc-100">
+      <div className="relative min-h-screen bg-newsroom text-newsroom-ink transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-100">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-red-500/10 via-transparent to-transparent dark:from-red-500/20" />
         <Navbar isDark={isDark} onToggleDark={() => setIsDark((prev) => !prev)} />
 
-        <main className="mx-auto w-full max-w-6xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-24">
+        <main className="relative mx-auto w-full max-w-6xl px-4 pb-16 pt-4 sm:px-6 md:pt-6 lg:px-8 lg:pb-24">
           <Hero socialLinks={socialLinks} />
           <About />
           <Education />
