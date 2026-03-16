@@ -3,30 +3,39 @@ import { motion as Motion } from 'framer-motion'
 const educationTimeline = [
   {
     degree: 'Master of Social Science (MSS)',
-    program: 'Journalism, Media & Communication',
+    subjectLabel: 'Subject',
+    subject: 'Journalism, Media & Communication',
     institution: 'Daffodil International University',
-    meta: 'Running (2023 - Present)',
-    current: true,
+    duration: '2023 - Present',
+    result: 'Running',
   },
   {
-    degree: 'Bachelor of Social Science (Honours)',
-    program: 'Journalism, Media & Communication',
+    degree: "Bachelor of Social Science (Hon's)",
+    subjectLabel: 'Subject',
+    subject: 'Journalism, Media & Communication',
     institution: 'Daffodil International University',
+    duration: 'Completed',
+    result: 'CGPA 3.55',
   },
   {
-    degree: 'Higher Secondary Certificate (Science)',
+    degree: 'Higher Secondary Certificate (HSC)',
+    subjectLabel: 'Group',
+    subject: 'Science',
     institution: 'BPATC School & College',
-    meta: 'Dhaka Board',
+    board: 'Dhaka Board',
+    result: 'GPA 4.67',
   },
   {
-    degree: 'Secondary School Certificate',
+    degree: 'Secondary School Certificate (SSC)',
     institution: 'Dhamrai Hardinge Govt High School & College',
-    meta: 'Result: GPA 5.00',
+    board: 'Dhaka Board',
+    result: 'GPA 5.00',
   },
 ]
 
 function Education() {
   const MotionSection = Motion.section
+  const MotionArticle = Motion.article
 
   return (
     <MotionSection
@@ -54,36 +63,78 @@ function Education() {
         {educationTimeline.map((item, index) => (
           <li key={item.degree} className="relative pb-8 last:pb-0">
             <span
-              className={`absolute -left-[1.95rem] top-1.5 h-4 w-4 rounded-full border-2 sm:-left-[2.45rem] ${item.current ? 'border-newsroom-accent bg-newsroom-accent dark:border-red-400 dark:bg-red-400' : 'border-newsroom-ink bg-newsroom-paper dark:border-zinc-300 dark:bg-zinc-950'}`}
+              className="absolute -left-[1.95rem] top-2 h-4 w-4 rounded-full border border-[#dc2626] bg-[#dc2626] sm:-left-[2.45rem]"
             />
-            <article className="rounded-lg border border-newsroom-border bg-newsroom-paper p-4 dark:border-zinc-700 dark:bg-zinc-950 sm:p-5">
-              <div className="flex flex-wrap items-center gap-2">
-                <p className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-newsroom-muted dark:text-zinc-400">
-                  Step {index + 1}
-                </p>
-                {item.current ? (
-                  <span className="rounded-full bg-newsroom-accent/10 px-2.5 py-1 font-body text-[10px] font-semibold uppercase tracking-[0.12em] text-newsroom-accent dark:bg-red-500/20 dark:text-red-400">
-                    Current
-                  </span>
-                ) : null}
-              </div>
+            <MotionArticle
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ delay: index * 0.08, duration: 0.55, ease: 'easeOut' }}
+              whileHover={{ y: -3 }}
+              className="rounded-xl border border-newsroom-border bg-newsroom-paper p-4 shadow-newsroom transition-shadow hover:shadow-lg dark:border-zinc-700 dark:bg-zinc-950 dark:shadow-none sm:p-5"
+            >
+              <p className="font-body text-xs font-semibold uppercase tracking-[0.12em] text-newsroom-muted dark:text-zinc-400">
+                Education {index + 1}
+              </p>
               <h4 className="mt-2 font-heading text-xl leading-snug text-newsroom-ink dark:text-zinc-100 sm:text-2xl">
                 {item.degree}
               </h4>
-              {item.program ? (
-                <p className="mt-2 font-body text-base font-semibold text-newsroom-ink/90 dark:text-zinc-200">
-                  {item.program}
-                </p>
-              ) : null}
-              <p className="mt-2 font-body text-base text-newsroom-muted dark:text-zinc-300">
-                {item.institution}
-              </p>
-              {item.meta ? (
-                <p className="mt-2 font-body text-sm font-semibold uppercase tracking-[0.08em] text-newsroom-accent dark:text-red-400">
-                  {item.meta}
-                </p>
-              ) : null}
-            </article>
+
+              <dl className="mt-4 grid gap-2">
+                {item.subject ? (
+                  <div className="flex flex-wrap gap-2">
+                    <dt className="font-body text-xs font-semibold uppercase tracking-[0.11em] text-newsroom-muted dark:text-zinc-400">
+                      {item.subjectLabel || 'Subject'}:
+                    </dt>
+                    <dd className="font-body text-sm font-semibold text-newsroom-ink/90 dark:text-zinc-200">
+                      {item.subject}
+                    </dd>
+                  </div>
+                ) : null}
+
+                <div className="flex flex-wrap gap-2">
+                  <dt className="font-body text-xs font-semibold uppercase tracking-[0.11em] text-newsroom-muted dark:text-zinc-400">
+                    Institution:
+                  </dt>
+                  <dd className="font-body text-sm font-semibold text-newsroom-ink/90 dark:text-zinc-200">
+                    {item.institution}
+                  </dd>
+                </div>
+
+                {item.duration ? (
+                  <div className="flex flex-wrap gap-2">
+                    <dt className="font-body text-xs font-semibold uppercase tracking-[0.11em] text-newsroom-muted dark:text-zinc-400">
+                      Duration:
+                    </dt>
+                    <dd className="font-body text-sm font-semibold text-newsroom-ink/90 dark:text-zinc-200">
+                      {item.duration}
+                    </dd>
+                  </div>
+                ) : null}
+
+                {item.board ? (
+                  <div className="flex flex-wrap gap-2">
+                    <dt className="font-body text-xs font-semibold uppercase tracking-[0.11em] text-newsroom-muted dark:text-zinc-400">
+                      Board:
+                    </dt>
+                    <dd className="font-body text-sm font-semibold text-newsroom-ink/90 dark:text-zinc-200">
+                      {item.board}
+                    </dd>
+                  </div>
+                ) : null}
+
+                {item.result ? (
+                  <div className="flex flex-wrap gap-2">
+                    <dt className="font-body text-xs font-semibold uppercase tracking-[0.11em] text-newsroom-muted dark:text-zinc-400">
+                      Result:
+                    </dt>
+                    <dd className="font-body text-sm font-semibold text-newsroom-accent dark:text-red-400">
+                      {item.result}
+                    </dd>
+                  </div>
+                ) : null}
+              </dl>
+            </MotionArticle>
           </li>
         ))}
       </ol>
